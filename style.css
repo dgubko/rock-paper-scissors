@@ -25,7 +25,7 @@ body {
   border-left: 1px solid #38003b;
   border-right: 1px solid #38003b;
 }
-.center-sec > h1 {
+h1 {
   font-family: "Permanent Marker", cursive;
   font-size: 10vh;
   margin: 0px;
@@ -72,24 +72,50 @@ body {
   background-color: #8426db87;
   cursor: pointer;
 }
+.game-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.game-container button {
+  margin: 40px;
+}
 .emoj {
   font-size: 6vh;
   margin: 1vh;
+}
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 #restart-button {
   margin-top: 15vh;
   padding: 2vh 5vw;
   color: #ffebfd;
   background-color: #c989e5;
-  border: none;
   border-radius: 8px;
   font-family: "Acme", sans-serif;
-  cursor: pointer;
 }
 #restart-button:hover {
-  transform: scale(1);
   background-color: #8426db87;
 }
-#restart-button:active {
+button:active {
   transform: scale(0.9);
+}
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Permanent Marker", cursive;
+  height: 50vh;
+}
+.result > img {
+  margin: 3vw;
+}
+img {
+  width: 20vh;
+}
+.hidden {
+  display: none !important;
 }
