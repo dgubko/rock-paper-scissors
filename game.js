@@ -31,10 +31,7 @@ class Game {
     }
     return "DRAW";
   }
-  checkClassic(fight) {
-    var humanWins = ["rock scissors", "paper rock", "scissors paper"];
-    var computerWins = ["rock paper", "paper scissors", "scissors rock"];
+  chooseGameType(gameType) {
+    this.gameType = gameType;
   }
-  //   draw()
-  //   reset()
 }

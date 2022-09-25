@@ -16,18 +16,18 @@
   <body>
     <section class="left-sec">
       <div>
-        <p class="emoj">🥷</p>
-        <h3>Human</h3>
-        <p>Wins: 0</p>
-        <button id="restart-button">RESTART</button>
+        <p class="emoj"></p>
+        <h3></h3>
+        <p id="human-wins"></p>
+        <button class="hidden" id="restart-button">RESTART</button>
       </div>
     </section>
 
     <section class="center-sec">
       <h1>Rock, Paper, Scissors</h1>
-      <p>Choose your game!</p>
+      <p id="chooseYourGame">Choose your game!</p>
       <div class="main-container">
-        <div>
+        <div id="classic">
           <h3>⚔️CLASSIC🛡</h3>
           <p>
             rock > scissors<br />
@@ -35,7 +35,7 @@
             scissors > paper
           </p>
         </div>
-        <div>
+        <div id="difficult">
           <h3>☣️DIFFICULT☢️</h3>
           <p>
             rock > scissors & lizard<br />
@@ -46,13 +46,37 @@
           </p>
         </div>
       </div>
+      <div class="game-container hidden">
+        <button id="rock">
+          <img src="img-src/happy-rock.png" alt="ROCK" />
+        </button>
+        <button id="paper">
+          <img src="img-src/happy-paper.png" alt="PAPER" />
+        </button>
+        <button id="scissors">
+          <img src="img-src/happy-scissors.png" alt="SCISSORS" />
+        </button>
+        <span class="hidden">
+          <button id="lizard">
+            <img src="img-src/happy-lizard.png" alt="LIZARD" />
+          </button>
+          <button id="alien">
+            <img src="img-src/happy-alien.png" alt="ALIEN" />
+          </button>
+        </span>
+      </div>
+      <div class="result hidden">
+        <img id="img1" src="img-src/happy-rock.png" alt="human-choise" />
+        <h1>VS</h1>
+        <img id="img2" src="img-src/happy-alien.png" alt="computer-choise" />
+      </div>
     </section>
 
     <section class="right-sec">
       <div>
-        <p class="emoj">💻</p>
-        <h3>Computer</h3>
-        <p>Wins: 0</p>
+        <p class="emoj"></p>
+        <h3></h3>
+        <p id="computer-wins"></p>
       </div>
     </section>
 
