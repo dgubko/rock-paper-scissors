@@ -38,13 +38,13 @@ function load() {
   computer1.innerText = game.computer.name;
   wins2.innerText = `Wins: ${game.computer.wins}`;
 }
+
 function chooseType(gameType) {
   mainContainer.classList.add("hidden");
   chooseYourGame.innerText = "Choose your fighter!";
   gameContainer.classList.remove("hidden");
   reset.classList.remove("hidden");
   game.chooseGameType(gameType);
-  console.log(game.gameType);
 }
 
 function classicGame() {
@@ -67,10 +67,13 @@ function fight(event) {
   chooseYourGame.innerText = message;
   resultImage1.src = `img-src/happy-${game.human.element}.png`;
   resultImage2.src = `img-src/happy-${game.computer.element}.png`;
-  console.log(game.human.element);
-  console.log(game.computer.element);
+  setTimeout(cycle, 2000);
 
-  // change img and make them dinamic
+  function cycle() {
+    chooseYourGame.innerText = "Choose your fighter!";
+    result.classList.add("hidden");
+    gameContainer.classList.remove("hidden");
+  }
 }
 
 function resetGame() {
@@ -79,4 +82,5 @@ function resetGame() {
   result.classList.add("hidden");
   mainContainer.classList.remove("hidden");
   difficultFighters.classList.add("hidden");
+  reset.classList.add("hidden");
 }
