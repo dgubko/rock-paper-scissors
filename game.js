@@ -44,16 +44,26 @@ class Game {
     if (humanWins.includes(fight)) {
       this.currentWinner = this.human;
       this.human.wins++;
+      this.human.saveWinsToStorage();
       return "🥷HUMAN WINS THIS ROUND🥷";
     }
     if (computerWins.includes(fight)) {
       this.currentWinner = this.computer;
       this.computer.wins++;
+      this.computer.saveWinsToStorage();
       return "💻COMPUTER WINS THIS ROUND💻";
     }
     return "😅IT'S A DRAW😅";
   }
   chooseGameType(gameType) {
     this.gameType = gameType;
+  }
+  onLoad() {
+    this.human.retrieveWinsFromStorage();
+    this.computer.retrieveWinsFromStorage();
+  }
+  reset() {
+    this.human.resetGame();
+    this.computer.resetGame();
   }
 }
