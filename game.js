@@ -17,19 +17,41 @@ class Game {
     var playerChoise = this.human.element;
     var computerChoise = this.computer.element;
     var fight = `${playerChoise} ${computerChoise}`;
-    var humanWins = ["rock scissors", "paper rock", "scissors paper"];
-    var computerWins = ["rock paper", "paper scissors", "scissors rock"];
+    var humanWins = [
+      "rock scissors",
+      "paper rock",
+      "scissors paper",
+      "rock lizard",
+      "paper alien",
+      "scissors lizard",
+      "lizard paper",
+      "lizard alien",
+      "alien scissors",
+      "alien rock",
+    ];
+    var computerWins = [
+      "rock paper",
+      "paper scissors",
+      "scissors rock",
+      "lizard rock",
+      "alien paper",
+      "lizard scissors",
+      "paper lizard",
+      "alien lizard",
+      "scissors alien",
+      "rock alien",
+    ];
     if (humanWins.includes(fight)) {
       this.currentWinner = this.human;
       this.human.wins++;
-      return "HUMAN WINS";
+      return "🥷HUMAN WINS THIS ROUND🥷";
     }
     if (computerWins.includes(fight)) {
       this.currentWinner = this.computer;
       this.computer.wins++;
-      return "COMPUTER WINS";
+      return "💻COMPUTER WINS THIS ROUND💻";
     }
-    return "DRAW";
+    return "😅IT'S A DRAW😅";
   }
   chooseGameType(gameType) {
     this.gameType = gameType;
