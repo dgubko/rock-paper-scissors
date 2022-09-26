@@ -31,6 +31,7 @@ for (var i = 0; i < fighterButtons.length; i++) {
 // FUNCTIONS
 function load() {
   game = new Game();
+  game.onLoad();
   humanToken.innerText = game.human.token;
   player1.innerText = game.human.name;
   wins1.innerText = `Wins: ${game.human.wins}`;
