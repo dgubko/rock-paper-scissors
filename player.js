@@ -20,4 +20,9 @@ class Player {
       this.wins = value;
     }
   }
+  resetGame() {
+    localStorage.removeItem(this.name);
+    this.elements = "";
+    this.wins = 0;
+  }
 }

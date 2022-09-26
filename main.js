@@ -2,7 +2,7 @@
 var mainContainer = document.querySelector(".main-container");
 var classic = document.querySelector("#classic");
 var difficult = document.querySelector("#difficult");
-var reset = document.querySelector("#restart-button");
+var changeDifficultyButton = document.querySelector("#restart-button");
 var chooseYourGame = document.querySelector("#chooseYourGame");
 var gameContainer = document.querySelector(".game-container");
 var difficultFighters = document.querySelector(".game-container > span");
@@ -14,15 +14,17 @@ var wins1 = document.querySelector("#human-wins");
 var computerToken = document.querySelector(".right-sec > div > .emoj");
 var computer1 = document.querySelector(".right-sec > div > h3");
 var wins2 = document.querySelector("#computer-wins");
+var resetButton = document.querySelector("#reset-button");
 var resultImage1 = document.querySelector("#img1");
 var resultImage2 = document.querySelector("#img2");
 var game;
 
 // EVENT LISTENERS
+resetButton.addEventListener("click", reset);
 window.addEventListener("load", load);
 classic.addEventListener("click", classicGame);
 difficult.addEventListener("click", difficultGame);
-reset.addEventListener("click", resetGame);
+changeDifficultyButton.addEventListener("click", changeDifficulty);
 
 for (var i = 0; i < fighterButtons.length; i++) {
   fighterButtons[i].addEventListener("click", fight);
@@ -44,7 +46,7 @@ function chooseType(gameType) {
   mainContainer.classList.add("hidden");
   chooseYourGame.innerText = "Choose your fighter!";
   gameContainer.classList.remove("hidden");
-  reset.classList.remove("hidden");
+  changeDifficultyButton.classList.remove("hidden");
   game.chooseGameType(gameType);
 }
 
@@ -77,11 +79,17 @@ function fight(event) {
   }
 }
 
-function resetGame() {
+function changeDifficulty() {
   chooseYourGame.innerText = "Choose your fighter!";
   gameContainer.classList.add("hidden");
   result.classList.add("hidden");
   mainContainer.classList.remove("hidden");
   difficultFighters.classList.add("hidden");
-  reset.classList.add("hidden");
+  changeDifficultyButton.classList.add("hidden");
+}
+
+function reset() {
+  game.reset();
+  wins1.innerText = `Wins: ${game.human.wins}`;
+  wins2.innerText = `Wins: ${game.computer.wins}`;
 }

@@ -62,4 +62,8 @@ class Game {
     this.human.retrieveWinsFromStorage();
     this.computer.retrieveWinsFromStorage();
   }
+  reset() {
+    this.human.resetGame();
+    this.computer.resetGame();
+  }
 }

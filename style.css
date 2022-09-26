@@ -90,7 +90,7 @@ button {
   border: none;
   cursor: pointer;
 }
-#restart-button {
+.side-button {
   margin-top: 10vh;
   font-size: 2.5vh;
   padding: 2vh 3vw;
@@ -99,7 +99,7 @@ button {
   border-radius: 8px;
   font-family: "Acme", sans-serif;
 }
-#restart-button:hover {
+.side-button:hover {
   background-color: #8426db87;
 }
 button:active {
